@@ -1,0 +1,35 @@
+Fuel and Speed
+class SimulationParameters:
+    def __init__(self, speed, fuelconsumption, time_interval):
+        self.speed = speed
+        self.fuelconsumption = fuelconsumption
+        self.time_interval = time_interval
+
+    def display_parameters(self):
+        print(f"speed: {self.speed} m/s")
+        print(f"fuelconsumption: {self.fuelconsumption} litre/hour")
+        print(f"Time Interval: {self.time_interval} seconds")
+
+
+def run_simulation(parameters):
+    # Your simulation logic goes here using the parameters
+    # For simplicity, let's calculate the final velocity using the kinematic equation: final_velocity = initial_velocity + acceleration * time_interval
+    final_velocity = parameters.speed + parameters.fuelconsumption * parameters.time_interval
+    print(f"Final Velocity: {final_velocity} m/s")
+
+
+# Example usage:
+if __name__ == "__main__":
+    # Set simulation parameters
+    speed = 10.0  # m/s
+    fuelconsumption = 2.0  # m/s^2
+    time_interval = 5.0  # seconds
+
+    # Create simulation parameters object
+    simulation_params = SimulationParameters(speed, fuelconsumption, time_interval)
+
+    # Display simulation parameters
+    simulation_params.display_parameters()
+
+    # Run the simulation
+    run_simulation(simulation_params)
